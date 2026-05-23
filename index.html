@@ -1,53 +1,584 @@
-P²
-PMP to Paid
-360 Global PM System
-By Victoria — PMP 2024
-From Local PM to
-Global Consultant
-Victoria failed her first PMP attempt. 8 months after passing, she had 18 contracts, doubled her income, and works from home on her own terms. This is her exact system.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP to Paid — The 360 Global PM System</title>
+<style>
+  :root {
+    --navy: #0D1B2A;
+    --gold: #C9A84C;
+    --slate: #2E4057;
+    --light: #F4F1EB;
+    --muted: #7A8B99;
+    --white: #ffffff;
+    --border: #E2DDD4;
+    --bg: #F8F6F1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--navy); min-height: 100vh; }
+  nav { background: var(--navy); padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .nav-brand { display: flex; align-items: center; gap: 10px; }
+  .nav-logo { width: 28px; height: 28px; background: var(--gold); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; color: var(--navy); }
+  .nav-name { color: var(--white); font-weight: 600; font-size: 15px; }
+  .nav-name span { color: var(--gold); }
+  .nav-badge { background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 11px; padding: 3px 10px; border-radius: 20px; }
+  .hero { background: var(--navy); padding: 48px 24px 40px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+  .hero-badge { display: inline-block; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 12px; font-weight: 600; padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 700; color: var(--white); line-height: 1.25; margin-bottom: 14px; }
+  .hero h1 span { color: var(--gold); }
+  .hero p { font-size: 15px; color: rgba(255,255,255,0.65); max-width: 520px; margin: 0 auto 24px; line-height: 1.7; }
+  .hero-stats { display: flex; justify-content: center; gap: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
+  .stat-num { font-size: 22px; font-weight: 700; color: var(--gold); }
+  .stat-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+  .modules { max-width: 800px; margin: 0 auto; padding: 32px 16px; }
+  .modules-label { font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 14px; text-align: center; }
+  .module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .module-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; padding: 18px; cursor: pointer; transition: all 0.15s; }
+  .module-card:hover { border-color: var(--gold); transform: translateY(-1px); }
+  .module-card.active { border-color: var(--gold); border-width: 2px; background: #FFFDF7; }
+  .module-num { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 0.07em; margin-bottom: 8px; }
+  .module-icon { font-size: 24px; margin-bottom: 8px; }
+  .module-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .module-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .workspace { max-width: 800px; margin: 0 auto; padding: 0 16px 48px; }
+  .ws-panel { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: none; }
+  .ws-panel.active { display: block; }
+  .ws-header { background: var(--navy); padding: 20px 24px; }
+  .ws-header-top { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+  .ws-num { background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 10px; }
+  .ws-title { font-size: 17px; font-weight: 600; color: var(--white); }
+  .ws-subtitle { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .ws-body { padding: 24px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .hint { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  textarea, input[type="text"] { width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 13px; font-family: inherit; color: var(--navy); background: var(--white); resize: vertical; }
+  textarea:focus, input[type="text"]:focus { outline: none; border-color: var(--gold); }
+  textarea { min-height: 120px; }
+  .field { margin-bottom: 18px; }
+  .option-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; margin-bottom: 18px; }
+  .opt { background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 10px 14px; font-size: 13px; color: var(--navy); cursor: pointer; transition: all 0.15s; }
+  .opt:hover { border-color: var(--gold); }
+  .opt.selected { background: var(--navy); border-color: var(--gold); color: var(--white); }
+  .btn-primary { background: var(--navy); color: var(--white); border: none; border-radius: 10px; padding: 12px 24px; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: opacity 0.15s; }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-gold { background: var(--gold); color: var(--navy); border: none; border-radius: 10px; padding: 12px 24px; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .btn-row { display: flex; gap: 10px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
+  .result-box { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 20px; }
+  .result-box.hidden { display: none; }
+  .result-label { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 10px; }
+  .result-content { font-size: 14px; color: var(--navy); line-height: 1.8; white-space: pre-wrap; }
+  .loading { display: none; align-items: center; gap: 10px; padding: 16px 0; font-size: 13px; color: var(--muted); }
+  .loading.show { display: flex; }
+  .spinner { width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.7s linear infinite; flex-shrink: 0; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .victoria-note { background: #FFFBF0; border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 14px 16px; margin-top: 16px; }
+  .cta-section { background: var(--navy); border-radius: 14px; padding: 24px; text-align: center; margin-top: 24px; }
+  .cta-section h3 { color: var(--white); font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .cta-section p { color: rgba(255,255,255,0.55); font-size: 13px; margin-bottom: 16px; }
+  .copy-btn { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; font-size: 12px; cursor: pointer; color: var(--navy); margin-top: 10px; }
+  .copy-btn:hover { border-color: var(--gold); }
+  .progress-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 24px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.2s; }
+  .dot.active { background: var(--gold); }
+  .dot.done { background: var(--navy); }
+  .nav-step { display: none; }
+  .nav-step.active { display: block; }
+  .step-q { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .step-hint { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  @media (max-width: 600px) { .hero-stats { gap: 20px; } .module-grid { grid-template-columns: 1fr 1fr; } .ws-body { padding: 16px; } }
+</style>
+</head>
+<body>
 
-18+
-Contracts completed
-8 mo
-To double income
-360°
-Proven system
-Choose your tool — all powered by Victoria's proven frameworks
-01
-🧭
-Personal Navigator
-Get your personalised roadmap based on your situation
-02
-📄
-CV Rebuild
-Paste your CV — get it rewritten for global clients
-03
-💼
-LinkedIn Transformer
-Rewrite your profile to attract inbound opportunities
-04
-🚀
-Upwork Positioning
-Rebuild your profile in the language clients hire from
-05
-🎤
-Interview Coach
-Practice with an AI client — learn the consultant language
-06
-⚙️
-Tools Roadmap
-Know exactly which tools to learn and in what order
-01
-Personal Navigator
-Answer 5 questions — get your personalised 90-day action plan
-What is your primary goal right now?
-This shapes everything we build for you.
-🏢 Remote PM job
-💻 Upwork freelancing
-🌍 Consulting practice
-📈 Higher salary
-Continue →
-Want Victoria to review your results personally?
-Book a 1:1 strategy session — she will review your actual profiles and give you a custom 30-day sprint.
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo">P2</div>
+    <div class="nav-name">PMP <span>to Paid</span></div>
+  </div>
+  <div class="nav-badge">360 Global PM System</div>
+</nav>
 
-Book a strategy session →
+<div class="hero">
+  <div class="hero-badge">By Victoria — PMP 2024</div>
+  <h1>From Local PM to<br><span>Global Consultant</span></h1>
+  <p>Victoria failed her first PMP attempt. 8 months after passing, she had 18 contracts, doubled her income, and works from home on her own terms. This is her exact system.</p>
+  <div class="hero-stats">
+    <div><div class="stat-num">18+</div><div class="stat-label">Contracts completed</div></div>
+    <div><div class="stat-num">8 mo</div><div class="stat-label">To double income</div></div>
+    <div><div class="stat-num">360</div><div class="stat-label">Proven system</div></div>
+  </div>
+</div>
+
+<div class="modules">
+  <div class="modules-label">Choose your tool — all powered by Victoria's proven frameworks</div>
+  <div class="module-grid">
+    <div class="module-card active" onclick="openModule('navigator')">
+      <div class="module-num">01</div>
+      <div class="module-icon">&#x1F9ED;</div>
+      <div class="module-title">Personal Navigator</div>
+      <div class="module-desc">Get your personalised roadmap based on your situation</div>
+    </div>
+    <div class="module-card" onclick="openModule('cv')">
+      <div class="module-num">02</div>
+      <div class="module-icon">&#x1F4C4;</div>
+      <div class="module-title">CV Rebuild</div>
+      <div class="module-desc">Paste your CV — get it rewritten for global clients</div>
+    </div>
+    <div class="module-card" onclick="openModule('linkedin')">
+      <div class="module-num">03</div>
+      <div class="module-icon">&#x1F4BC;</div>
+      <div class="module-title">LinkedIn Transformer</div>
+      <div class="module-desc">Rewrite your profile to attract inbound opportunities</div>
+    </div>
+    <div class="module-card" onclick="openModule('upwork')">
+      <div class="module-num">04</div>
+      <div class="module-icon">&#x1F680;</div>
+      <div class="module-title">Upwork Positioning</div>
+      <div class="module-desc">Rebuild your profile in the language clients hire from</div>
+    </div>
+    <div class="module-card" onclick="openModule('interview')">
+      <div class="module-num">05</div>
+      <div class="module-icon">&#x1F3A4;</div>
+      <div class="module-title">Interview Coach</div>
+      <div class="module-desc">Practice with an AI client — learn the consultant language</div>
+    </div>
+    <div class="module-card" onclick="openModule('tools')">
+      <div class="module-num">06</div>
+      <div class="module-icon">&#x2699;&#xFE0F;</div>
+      <div class="module-title">Tools Roadmap</div>
+      <div class="module-desc">Know exactly which tools to learn and in what order</div>
+    </div>
+  </div>
+</div>
+
+<div class="workspace">
+
+  <div class="ws-panel active" id="panel-navigator">
+    <div class="ws-header">
+      <div class="ws-header-top"><span class="ws-num">01</span><span class="ws-title">Personal Navigator</span></div>
+      <div class="ws-subtitle">Answer 5 questions — get your personalised 90-day action plan</div>
+    </div>
+    <div class="ws-body">
+      <div class="progress-dots" id="nav-dots">
+        <div class="dot active" onclick="goStep(0)"></div>
+        <div class="dot" onclick="goStep(1)"></div>
+        <div class="dot" onclick="goStep(2)"></div>
+        <div class="dot" onclick="goStep(3)"></div>
+        <div class="dot" onclick="goStep(4)"></div>
+      </div>
+      <div class="nav-step active" id="step-0">
+        <div class="step-q">What is your primary goal right now?</div>
+        <div class="step-hint">This shapes everything we build for you.</div>
+        <div class="option-row">
+          <div class="opt" onclick="setNav('goal','Land a remote PM job')">Remote PM job</div>
+          <div class="opt" onclick="setNav('goal','Get freelance clients on Upwork')">Upwork freelancing</div>
+          <div class="opt" onclick="setNav('goal','Build a consulting practice')">Consulting practice</div>
+          <div class="opt" onclick="setNav('goal','Negotiate a higher salary')">Higher salary</div>
+        </div>
+        <button class="btn-primary" onclick="nextStep(0)">Continue</button>
+      </div>
+      <div class="nav-step" id="step-1">
+        <div class="step-q">How many years of project experience do you have?</div>
+        <div class="step-hint">This affects how we position and frame your profile.</div>
+        <div class="option-row">
+          <div class="opt" onclick="setNav('exp','0-2 years')">0-2 years</div>
+          <div class="opt" onclick="setNav('exp','3-5 years')">3-5 years</div>
+          <div class="opt" onclick="setNav('exp','6-10 years')">6-10 years</div>
+          <div class="opt" onclick="setNav('exp','10+ years')">10+ years</div>
+        </div>
+        <div class="btn-row">
+          <button class="btn-primary" onclick="prevStep(1)">Back</button>
+          <button class="btn-primary" onclick="nextStep(1)">Continue</button>
+        </div>
+      </div>
+      <div class="nav-step" id="step-2">
+        <div class="step-q">What is your biggest challenge right now?</div>
+        <div class="option-row">
+          <div class="opt" onclick="setNav('block','No portfolio or remote experience')">No portfolio</div>
+          <div class="opt" onclick="setNav('block','LinkedIn not attracting opportunities')">Weak LinkedIn</div>
+          <div class="opt" onclick="setNav('block','Unsure which tools to learn')">Tools confusion</div>
+          <div class="opt" onclick="setNav('block','Do not know how to pitch clients')">Pitching clients</div>
+        </div>
+        <div class="btn-row">
+          <button class="btn-primary" onclick="prevStep(2)">Back</button>
+          <button class="btn-primary" onclick="nextStep(2)">Continue</button>
+        </div>
+      </div>
+      <div class="nav-step" id="step-3">
+        <div class="step-q">What industry have you worked in?</div>
+        <div class="option-row">
+          <div class="opt" onclick="setNav('industry','Tech / Software')">Tech</div>
+          <div class="opt" onclick="setNav('industry','Construction / Engineering')">Construction</div>
+          <div class="opt" onclick="setNav('industry','Finance / Banking')">Finance</div>
+          <div class="opt" onclick="setNav('industry','Healthcare / NGO')">Healthcare</div>
+          <div class="opt" onclick="setNav('industry','Marketing / Agency')">Marketing</div>
+          <div class="opt" onclick="setNav('industry','Other')">Other</div>
+        </div>
+        <div class="btn-row">
+          <button class="btn-primary" onclick="prevStep(3)">Back</button>
+          <button class="btn-primary" onclick="nextStep(3)">Continue</button>
+        </div>
+      </div>
+      <div class="nav-step" id="step-4">
+        <div class="step-q">What does success look like for you in 90 days?</div>
+        <div class="step-hint">Write it in your own words — the more specific, the better your plan.</div>
+        <div class="field">
+          <textarea id="nav-success" placeholder="e.g. I want to land my first remote contract paying in USD, work 20 hours a week, and stop depending on my 9-to-5..."></textarea>
+        </div>
+        <div class="btn-row">
+          <button class="btn-primary" onclick="prevStep(4)">Back</button>
+          <button class="btn-primary" onclick="runNavigator()">Build my plan</button>
+        </div>
+      </div>
+      <div class="loading" id="nav-loading"><div class="spinner"></div><span id="nav-loading-msg">Building your personalised roadmap...</span></div>
+      <div class="result-box hidden" id="nav-result">
+        <div class="result-label">Your personalised 90-day plan</div>
+        <div class="result-content" id="nav-result-text"></div>
+        <button class="copy-btn" onclick="copyResult('nav-result-text')">Copy plan</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ws-panel" id="panel-cv">
+    <div class="ws-header">
+      <div class="ws-header-top"><span class="ws-num">02</span><span class="ws-title">CV Rebuild</span></div>
+      <div class="ws-subtitle">Paste your current CV — Victoria's system rewrites it for global clients</div>
+    </div>
+    <div class="ws-body">
+      <div class="field">
+        <label>Paste your current CV or the section you want rebuilt</label>
+        <div class="hint">Copy and paste your full CV text, or just your summary and experience sections.</div>
+        <textarea id="cv-input" rows="8" placeholder="Paste your CV text here..."></textarea>
+      </div>
+      <div class="field">
+        <label>What role or client type are you targeting?</label>
+        <input type="text" id="cv-target" placeholder="e.g. Remote project manager for tech startups">
+      </div>
+      <button class="btn-primary" onclick="runCV()">Rebuild my CV</button>
+      <div class="loading" id="cv-loading"><div class="spinner"></div><span>Rebuilding your CV with Victoria's framework...</span></div>
+      <div class="result-box hidden" id="cv-result">
+        <div class="result-label">Your rebuilt CV — ready to use</div>
+        <div class="result-content" id="cv-result-text"></div>
+        <button class="copy-btn" onclick="copyResult('cv-result-text')">Copy rebuilt CV</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ws-panel" id="panel-linkedin">
+    <div class="ws-header">
+      <div class="ws-header-top"><span class="ws-num">03</span><span class="ws-title">LinkedIn Transformer</span></div>
+      <div class="ws-subtitle">Stop adding PMP and hoping. Start attracting the right people.</div>
+    </div>
+    <div class="ws-body">
+      <div class="field">
+        <label>Your current LinkedIn headline</label>
+        <div class="hint">The line under your name. Most PMPs get this completely wrong.</div>
+        <input type="text" id="li-headline" placeholder="e.g. Project Manager | PMP Certified | Open to opportunities">
+      </div>
+      <div class="field">
+        <label>Your current About section</label>
+        <textarea id="li-about" placeholder="Paste your current About section here..."></textarea>
+      </div>
+      <div class="field">
+        <label>What is your target?</label>
+        <div class="option-row">
+          <div class="opt" onclick="selectOpt(this,'li-target','Remote PM job')">Remote PM job</div>
+          <div class="opt" onclick="selectOpt(this,'li-target','Freelance / Upwork clients')">Freelance clients</div>
+          <div class="opt" onclick="selectOpt(this,'li-target','Both')">Both</div>
+        </div>
+        <input type="hidden" id="li-target">
+      </div>
+      <button class="btn-primary" onclick="runLinkedIn()">Transform my LinkedIn</button>
+      <div class="loading" id="li-loading"><div class="spinner"></div><span>Rewriting your LinkedIn with Victoria's positioning formula...</span></div>
+      <div class="result-box hidden" id="li-result">
+        <div class="result-label">Your transformed LinkedIn — copy and replace</div>
+        <div class="result-content" id="li-result-text"></div>
+        <button class="copy-btn" onclick="copyResult('li-result-text')">Copy LinkedIn content</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ws-panel" id="panel-upwork">
+    <div class="ws-header">
+      <div class="ws-header-top"><span class="ws-num">04</span><span class="ws-title">Upwork Positioning</span></div>
+      <div class="ws-subtitle">The exact formula that got Victoria 18 contracts in 8 months</div>
+    </div>
+    <div class="ws-body">
+      <div class="field">
+        <label>Paste your current Upwork profile overview (leave blank if starting fresh)</label>
+        <textarea id="uw-current" placeholder="Paste your current Upwork overview here, or leave blank..."></textarea>
+      </div>
+      <div class="field">
+        <label>Describe your background in 2-3 sentences</label>
+        <textarea id="uw-background" rows="3" placeholder="e.g. I have 8 years experience managing projects in oil and gas. I hold a PMP and have delivered projects worth over 2 million USD..."></textarea>
+      </div>
+      <div class="field">
+        <label>What type of clients do you want to attract?</label>
+        <input type="text" id="uw-target" placeholder="e.g. Tech startups needing a part-time PM">
+      </div>
+      <button class="btn-primary" onclick="runUpwork()">Rebuild my Upwork profile</button>
+      <div class="loading" id="uw-loading"><div class="spinner"></div><span>Rebuilding your Upwork profile in consultant language...</span></div>
+      <div class="result-box hidden" id="uw-result">
+        <div class="result-label">Your rebuilt Upwork profile — ready to paste</div>
+        <div class="result-content" id="uw-result-text"></div>
+        <button class="copy-btn" onclick="copyResult('uw-result-text')">Copy Upwork profile</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ws-panel" id="panel-interview">
+    <div class="ws-header">
+      <div class="ws-header-top"><span class="ws-num">05</span><span class="ws-title">Interview Coach</span></div>
+      <div class="ws-subtitle">Practice the consultant language. The AI plays the client. You close them.</div>
+    </div>
+    <div class="ws-body">
+      <div class="field">
+        <label>What type of role or client are you preparing for?</label>
+        <input type="text" id="int-role" placeholder="e.g. Remote PM role at a UK tech company">
+      </div>
+      <div class="field">
+        <label>Select a scenario</label>
+        <div class="option-row">
+          <div class="opt" onclick="selectOpt(this,'int-scenario','Client discovery call')">Discovery call</div>
+          <div class="opt" onclick="selectOpt(this,'int-scenario','PM job interview')">Job interview</div>
+          <div class="opt" onclick="selectOpt(this,'int-scenario','Handling the rate objection')">Rate objection</div>
+          <div class="opt" onclick="selectOpt(this,'int-scenario','Convincing a sceptical client')">Sceptical client</div>
+        </div>
+        <input type="hidden" id="int-scenario">
+      </div>
+      <button class="btn-primary" onclick="startInterview()">Start practice session</button>
+      <div id="interview-chat" style="display:none; margin-top:20px;">
+        <div id="chat-messages" style="background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:16px; min-height:120px; margin-bottom:14px; font-size:14px; line-height:1.7;"></div>
+        <div class="field">
+          <label>Your answer</label>
+          <textarea id="int-answer" rows="3" placeholder="Type your answer as you would say it in a real call..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="sendAnswer()">Get feedback</button>
+        <div class="loading" id="int-loading"><div class="spinner"></div><span>Analysing your answer...</span></div>
+        <div class="result-box hidden" id="int-result">
+          <div class="result-label">Feedback — employee vs consultant language</div>
+          <div class="result-content" id="int-result-text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ws-panel" id="panel-tools">
+    <div class="ws-header">
+      <div class="ws-header-top"><span class="ws-num">06</span><span class="ws-title">Tools Roadmap</span></div>
+      <div class="ws-subtitle">Know exactly what to learn, in what order, for your specific goal</div>
+    </div>
+    <div class="ws-body">
+      <div class="field">
+        <label>What tools do you already know?</label>
+        <input type="text" id="tools-know" placeholder="e.g. Excel, Trello, basic Asana">
+      </div>
+      <div class="field">
+        <label>What is your primary goal?</label>
+        <div class="option-row">
+          <div class="opt" onclick="selectOpt(this,'tools-goal','Land a remote PM job')">Remote job</div>
+          <div class="opt" onclick="selectOpt(this,'tools-goal','Get Upwork clients')">Upwork clients</div>
+          <div class="opt" onclick="selectOpt(this,'tools-goal','Consulting practice')">Consulting</div>
+        </div>
+        <input type="hidden" id="tools-goal">
+      </div>
+      <div class="field">
+        <label>How many hours per week can you dedicate to learning?</label>
+        <div class="option-row">
+          <div class="opt" onclick="selectOpt(this,'tools-hours','1-3 hours per week')">1-3 hrs/week</div>
+          <div class="opt" onclick="selectOpt(this,'tools-hours','4-7 hours per week')">4-7 hrs/week</div>
+          <div class="opt" onclick="selectOpt(this,'tools-hours','8+ hours per week')">8+ hrs/week</div>
+        </div>
+        <input type="hidden" id="tools-hours">
+      </div>
+      <button class="btn-primary" onclick="runTools()">Build my tools roadmap</button>
+      <div class="loading" id="tools-loading"><div class="spinner"></div><span>Building your personalised tools roadmap...</span></div>
+      <div class="result-box hidden" id="tools-result">
+        <div class="result-label">Your personalised tools roadmap</div>
+        <div class="result-content" id="tools-result-text"></div>
+        <button class="copy-btn" onclick="copyResult('tools-result-text')">Copy roadmap</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>Want Victoria to review your results personally?</h3>
+    <p>Book a 1:1 strategy session — she will review your actual profiles and give you a custom 30-day sprint.</p>
+    <button class="btn-gold" onclick="window.open(' https://selar.com/n7117e4161','_blank')">Book a strategy session</button>
+  </div>
+
+</div>
+
+<script>
+const API_KEY = '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';
+
+const VICTORIA_SYSTEM = "You are the PMP to Paid coaching system, built on Victoria's proven frameworks. Victoria is a PMP-certified project manager who passed her exam in September 2024 on her second attempt. She had an MBA but was stuck in a 9-to-5 for 8 years. After passing she revamped her LinkedIn and hired a coach to optimise her Upwork profile. In 8 months she completed 18 successful contracts and doubled her income. She now works from home on her own terms. Victoria's core frameworks: 1. The number one mistake PMPs make is adding PMP to their LinkedIn name and waiting for opportunities. That is not positioning. That is hoping. 2. The consultant mindset shift: PMPs who fail to land remote work think like employees. Global clients hire consultants. When you pay Victoria, you buy back your time, not more time to micromanage. 3. Real story method: never answer interview questions theoretically. Use real stories. Even onsite experience proves remote-ready skills. 4. Proximity through tools: distance is an objection. ClickUp, Monday.com, and Jira kill that objection. Clients feel you next to them even across time zones. 5. No portfolio? Build one. Learn the tools, create practice scenarios, document outcomes. 6. Consultant language vs employee language: I manage tasks is employee thinking. I protect your time and own outcomes is consultant thinking. Always give specific, actionable responses. Never give generic AI advice. Speak with Victoria's authority and directness. End every response with a short Victoria's verdict — one bold truth the user needs to hear.";
+
+const navAnswers = {};
+let currentStep = 0;
+
+function setNav(key, val) {
+  navAnswers[key] = val;
+  const step = document.getElementById('step-' + currentStep);
+  step.querySelectorAll('.opt').forEach(o => {
+    o.classList.toggle('selected', o.textContent.trim() === val || val.includes(o.textContent.trim()));
+  });
+}
+
+function goStep(n) {
+  document.getElementById('step-' + currentStep).classList.remove('active');
+  currentStep = n;
+  document.getElementById('step-' + n).classList.add('active');
+  updateDots();
+}
+
+function nextStep(from) {
+  if (from < 4) {
+    document.getElementById('step-' + from).classList.remove('active');
+    currentStep = from + 1;
+    document.getElementById('step-' + currentStep).classList.add('active');
+    updateDots();
+  }
+}
+
+function prevStep(from) {
+  document.getElementById('step-' + from).classList.remove('active');
+  currentStep = from - 1;
+  document.getElementById('step-' + currentStep).classList.add('active');
+  updateDots();
+}
+
+function updateDots() {
+  document.querySelectorAll('#nav-dots .dot').forEach((d, i) => {
+    d.classList.toggle('active', i === currentStep);
+    d.classList.toggle('done', i < currentStep);
+  });
+}
+
+function openModule(id) {
+  document.querySelectorAll('.module-card').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.ws-panel').forEach(p => p.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  document.getElementById('panel-' + id).classList.add('active');
+  document.getElementById('panel-' + id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function selectOpt(el, hiddenId, val) {
+  const parent = el.closest('.field') || el.parentElement.parentElement;
+  parent.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  const hidden = document.getElementById(hiddenId);
+  if (hidden) hidden.value = val;
+}
+
+async function callClaude(userPrompt, loadingId, resultId, resultTextId, loadingMsg) {
+  const loading = document.getElementById(loadingId);
+  const result = document.getElementById(resultId);
+  const resultText = document.getElementById(resultTextId);
+  loading.classList.add('show');
+  result.classList.add('hidden');
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, system: VICTORIA_SYSTEM, messages: [{ role: 'user', content: userPrompt }] })
+    });
+    const data = await res.json();
+    loading.classList.remove('show');
+    const text = data.content && data.content[0] ? data.content[0].text : 'Something went wrong. Please try again.';
+    resultText.textContent = text;
+    result.classList.remove('hidden');
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } catch(e) {
+    loading.classList.remove('show');
+    resultText.textContent = 'Connection error. Please check your API key and try again.';
+    result.classList.remove('hidden');
+  }
+}
+
+async function runNavigator() {
+  const success = document.getElementById('nav-success').value;
+  const prompt = 'A newly certified PMP needs guidance. Goal: ' + (navAnswers.goal || 'not specified') + '. Experience: ' + (navAnswers.exp || 'not specified') + '. Biggest challenge: ' + (navAnswers.block || 'not specified') + '. Industry: ' + (navAnswers.industry || 'not specified') + '. 90-day vision: ' + (success || 'not specified') + '. Give them a personalised action plan with these sections: 1. THEIR SITUATION — one honest paragraph. 2. LINKEDIN STRATEGY — 3 specific actions. 3. POSITIONING STRATEGY — 3 specific steps. 4. TOOLS TO LEARN — ranked list with reasons. 5. 90-DAY SPRINT — week by week. 6. VICTORIAS VERDICT — one bold truth. Be specific. No generic advice.';
+  await callClaude(prompt, 'nav-loading', 'nav-result', 'nav-result-text', 'Building your personalised roadmap...');
+}
+
+async function runCV() {
+  const cv = document.getElementById('cv-input').value;
+  const target = document.getElementById('cv-target').value;
+  if (!cv.trim()) { alert('Please paste your CV first.'); return; }
+  const prompt = 'A PMP needs their CV rebuilt for global remote work. Target: ' + (target || 'global remote PM roles') + '. Their CV: ' + cv + '. Please provide: 1. DIAGNOSIS — top 3 problems with this CV. 2. REBUILT CV — rewrite summary and experience sections with outcomes not duties, consultant language, global framing. 3. KEYWORDS TO ADD — 5 keywords for global clients. 4. VICTORIAS VERDICT — the one change that makes the biggest difference. Make the rebuilt sections copy-paste ready.';
+  await callClaude(prompt, 'cv-loading', 'cv-result', 'cv-result-text', 'Rebuilding your CV...');
+}
+
+async function runLinkedIn() {
+  const headline = document.getElementById('li-headline').value;
+  const about = document.getElementById('li-about').value;
+  const target = document.getElementById('li-target').value;
+  if (!headline.trim()) { alert('Please enter your current LinkedIn headline.'); return; }
+  const prompt = 'A PMP needs their LinkedIn transformed. Target: ' + (target || 'remote opportunities') + '. Current headline: ' + headline + '. Current about: ' + (about || 'not provided') + '. Please provide: 1. HEADLINE DIAGNOSIS — what is wrong and why it costs them. 2. NEW HEADLINE 3 OPTIONS — consultant positioning formula, no job titles. 3. ABOUT SECTION REWRITE — hook, credibility, what I deliver, who I help, call to action. 4. KEYWORDS TO ADD — for global remote PM discoverability. 5. PROFILE ACTIONS — 3 quick wins today. 6. VICTORIAS VERDICT — the truth about why most PMP profiles fail. Make rewrites copy-paste ready.';
+  await callClaude(prompt, 'li-loading', 'li-result', 'li-result-text', 'Transforming your LinkedIn...');
+}
+
+async function runUpwork() {
+  const current = document.getElementById('uw-current').value;
+  const background = document.getElementById('uw-background').value;
+  const target = document.getElementById('uw-target').value;
+  if (!background.trim()) { alert('Please describe your background first.'); return; }
+  const prompt = 'A PMP needs their Upwork profile rebuilt. Background: ' + background + '. Target clients: ' + (target || 'international PM clients') + '. Current profile: ' + (current || 'starting fresh') + '. Please provide: 1. WHAT IS WRONG — specific employee language to remove. 2. REBUILT OVERVIEW — open with client pain, establish credibility, show proof, state delivery, clear CTA. First person consultant tone. 3. PROFILE TITLE — 3 options. 4. PROPOSAL TEMPLATE — reusable for their niche. 5. PORTFOLIO STRATEGY — build proof without prior remote clients. 6. VICTORIAS VERDICT — the mindset shift that changes everything. Make everything copy-paste ready.';
+  await callClaude(prompt, 'uw-loading', 'uw-result', 'uw-result-text', 'Rebuilding your Upwork profile...');
+}
+
+let interviewHistory = [];
+
+async function startInterview() {
+  const role = document.getElementById('int-role').value;
+  const scenario = document.getElementById('int-scenario').value;
+  if (!scenario) { alert('Please select an interview scenario.'); return; }
+  interviewHistory = [];
+  const chatDiv = document.getElementById('interview-chat');
+  const messages = document.getElementById('chat-messages');
+  chatDiv.style.display = 'block';
+  document.getElementById('int-result').classList.add('hidden');
+  const openings = {
+    'Client discovery call': 'Hi, I am looking for a project manager to help us with ' + (role || 'a major initiative') + '. We have had issues in the past with PMs who needed constant hand-holding. Tell me — how do you ensure a project stays on track without me having to chase for updates?',
+    'PM job interview': 'Thanks for coming in. I see you have your PMP. A lot of candidates have certifications but struggle in real environments. Can you walk me through a time a project was going off the rails and what you personally did to recover it?',
+    'Handling the rate objection': 'I like your profile but your rate is higher than others I have seen. The last PM we hired charged half what you are asking. Help me understand why you are worth the difference.',
+    'Convincing a sceptical client': 'Look, I have used project managers before and it always ends the same way — I still end up doing the work myself. What makes you different?'
+  };
+  const question = openings[scenario] || openings['Client discovery call'];
+  messages.innerHTML = '<div style="background:#0D1B2A;color:white;padding:12px 14px;border-radius:10px;margin-bottom:10px;font-size:13px;"><strong style="color:#C9A84C">Client: </strong>' + question + '</div>';
+}
+
+async function sendAnswer() {
+  const answer = document.getElementById('int-answer').value;
+  if (!answer.trim()) { alert('Please type your answer first.'); return; }
+  const messages = document.getElementById('chat-messages');
+  messages.innerHTML += '<div style="background:#F4F1EB;padding:12px 14px;border-radius:10px;margin-bottom:10px;font-size:13px;"><strong>You: </strong>' + answer + '</div>';
+  const scenario = document.getElementById('int-scenario').value || 'client interview';
+  const role = document.getElementById('int-role').value || 'a remote PM role';
+  const prompt = 'The person is practising a ' + scenario + ' for ' + role + '. They just said: ' + answer + '. Give feedback: SCORE — Employee 1 to Consultant 10: score out of 10. WHAT WORKED — what was good. WHAT TO IMPROVE — what sounded like employee thinking. VICTORIAS REWRITE — how Victoria would have answered using consultant language. FOLLOW-UP QUESTION — one more challenging question as the client.';
+  await callClaude(prompt, 'int-loading', 'int-result', 'int-result-text', 'Analysing your answer...');
+  document.getElementById('int-answer').value = '';
+}
+
+async function runTools() {
+  const know = document.getElementById('tools-know').value;
+  const goal = document.getElementById('tools-goal').value;
+  const hours = document.getElementById('tools-hours').value;
+  if (!goal) { alert('Please select your goal first.'); return; }
+  const prompt = 'A PMP needs a personalised tools learning roadmap. Tools they know: ' + (know || 'none') + '. Goal: ' + goal + '. Available time: ' + (hours || 'not specified') + '. Please provide: 1. TOOL PRIORITY RANKING — ranked list with reasons. Victoria non-negotiables are ClickUp, Monday.com, and Jira — explain why these three matter. 2. LEARNING SEQUENCE — order and time for each. 3. HOW TO LEARN EACH — best free resources. 4. PORTFOLIO STRATEGY — build proof without client work. 5. HOW TO PRESENT TOOL SKILLS — exact language for CV, LinkedIn, Upwork. 6. WEEKLY PLAN — realistic schedule based on available hours. 7. VICTORIAS VERDICT — the mindset about tools most PMPs miss.';
+  await callClaude(prompt, 'tools-loading', 'tools-result', 'tools-result-text', 'Building your tools roadmap...');
+}
+
+function copyResult(id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    event.currentTarget.textContent = 'Copied';
+    setTimeout(function() { event.currentTarget.textContent = 'Copy'; }, 2000);
+  });
+}
+</script>
+</body>
+</html>
