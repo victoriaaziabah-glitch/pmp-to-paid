@@ -73,7 +73,6 @@
   .loading.show { display: flex; }
   .spinner { width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.7s linear infinite; flex-shrink: 0; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .victoria-note { background: #FFFBF0; border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 14px 16px; margin-top: 16px; }
   .cta-section { background: var(--navy); border-radius: 14px; padding: 24px; text-align: center; margin-top: 24px; }
   .cta-section h3 { color: var(--white); font-size: 16px; font-weight: 600; margin-bottom: 6px; }
   .cta-section p { color: rgba(255,255,255,0.55); font-size: 13px; margin-bottom: 16px; }
@@ -232,7 +231,7 @@
           <button class="btn-primary" onclick="runNavigator()">Build my plan</button>
         </div>
       </div>
-      <div class="loading" id="nav-loading"><div class="spinner"></div><span id="nav-loading-msg">Building your personalised roadmap...</span></div>
+      <div class="loading" id="nav-loading"><div class="spinner"></div><span>Building your personalised roadmap...</span></div>
       <div class="result-box hidden" id="nav-result">
         <div class="result-label">Your personalised 90-day plan</div>
         <div class="result-content" id="nav-result-text"></div>
@@ -257,7 +256,7 @@
         <input type="text" id="cv-target" placeholder="e.g. Remote project manager for tech startups">
       </div>
       <button class="btn-primary" onclick="runCV()">Rebuild my CV</button>
-      <div class="loading" id="cv-loading"><div class="spinner"></div><span>Rebuilding your CV with Victoria's framework...</span></div>
+      <div class="loading" id="cv-loading"><div class="spinner"></div><span>Rebuilding your CV...</span></div>
       <div class="result-box hidden" id="cv-result">
         <div class="result-label">Your rebuilt CV — ready to use</div>
         <div class="result-content" id="cv-result-text"></div>
@@ -291,7 +290,7 @@
         <input type="hidden" id="li-target">
       </div>
       <button class="btn-primary" onclick="runLinkedIn()">Transform my LinkedIn</button>
-      <div class="loading" id="li-loading"><div class="spinner"></div><span>Rewriting your LinkedIn with Victoria's positioning formula...</span></div>
+      <div class="loading" id="li-loading"><div class="spinner"></div><span>Transforming your LinkedIn...</span></div>
       <div class="result-box hidden" id="li-result">
         <div class="result-label">Your transformed LinkedIn — copy and replace</div>
         <div class="result-content" id="li-result-text"></div>
@@ -312,14 +311,14 @@
       </div>
       <div class="field">
         <label>Describe your background in 2-3 sentences</label>
-        <textarea id="uw-background" rows="3" placeholder="e.g. I have 8 years experience managing projects in oil and gas. I hold a PMP and have delivered projects worth over 2 million USD..."></textarea>
+        <textarea id="uw-background" rows="3" placeholder="e.g. I have 8 years experience managing projects. I hold a PMP and have delivered projects worth over 2 million USD..."></textarea>
       </div>
       <div class="field">
         <label>What type of clients do you want to attract?</label>
         <input type="text" id="uw-target" placeholder="e.g. Tech startups needing a part-time PM">
       </div>
       <button class="btn-primary" onclick="runUpwork()">Rebuild my Upwork profile</button>
-      <div class="loading" id="uw-loading"><div class="spinner"></div><span>Rebuilding your Upwork profile in consultant language...</span></div>
+      <div class="loading" id="uw-loading"><div class="spinner"></div><span>Rebuilding your Upwork profile...</span></div>
       <div class="result-box hidden" id="uw-result">
         <div class="result-label">Your rebuilt Upwork profile — ready to paste</div>
         <div class="result-content" id="uw-result-text"></div>
@@ -394,7 +393,7 @@
         <input type="hidden" id="tools-hours">
       </div>
       <button class="btn-primary" onclick="runTools()">Build my tools roadmap</button>
-      <div class="loading" id="tools-loading"><div class="spinner"></div><span>Building your personalised tools roadmap...</span></div>
+      <div class="loading" id="tools-loading"><div class="spinner"></div><span>Building your tools roadmap...</span></div>
       <div class="result-box hidden" id="tools-result">
         <div class="result-label">Your personalised tools roadmap</div>
         <div class="result-content" id="tools-result-text"></div>
@@ -406,14 +405,12 @@
   <div class="cta-section">
     <h3>Want Victoria to review your results personally?</h3>
     <p>Book a 1:1 strategy session — she will review your actual profiles and give you a custom 30-day sprint.</p>
-    <button class="btn-gold" onclick="window.open('https://calendly.com/YOUR-LINK','_blank')">Book a strategy session</button>
+    <button class="btn-gold" onclick="window.open('https://selar.co/n7117e4161','_blank')">Book a 1:1 Strategy Session with Victoria</button>
   </div>
 
 </div>
 
 <script>
-const API_KEY = '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';
-
 const VICTORIA_SYSTEM = "You are the PMP to Paid coaching system, built on Victoria's proven frameworks. Victoria is a PMP-certified project manager who passed her exam in September 2024 on her second attempt. She had an MBA but was stuck in a 9-to-5 for 8 years. After passing she revamped her LinkedIn and hired a coach to optimise her Upwork profile. In 8 months she completed 18 successful contracts and doubled her income. She now works from home on her own terms. Victoria's core frameworks: 1. The number one mistake PMPs make is adding PMP to their LinkedIn name and waiting for opportunities. That is not positioning. That is hoping. 2. The consultant mindset shift: PMPs who fail to land remote work think like employees. Global clients hire consultants. When you pay Victoria, you buy back your time, not more time to micromanage. 3. Real story method: never answer interview questions theoretically. Use real stories. Even onsite experience proves remote-ready skills. 4. Proximity through tools: distance is an objection. ClickUp, Monday.com, and Jira kill that objection. Clients feel you next to them even across time zones. 5. No portfolio? Build one. Learn the tools, create practice scenarios, document outcomes. 6. Consultant language vs employee language: I manage tasks is employee thinking. I protect your time and own outcomes is consultant thinking. Always give specific, actionable responses. Never give generic AI advice. Speak with Victoria's authority and directness. End every response with a short Victoria's verdict — one bold truth the user needs to hear.";
 
 const navAnswers = {};
@@ -473,17 +470,17 @@ function selectOpt(el, hiddenId, val) {
   if (hidden) hidden.value = val;
 }
 
-async function callClaude(userPrompt, loadingId, resultId, resultTextId, loadingMsg) {
+async function callClaude(userPrompt, loadingId, resultId, resultTextId) {
   const loading = document.getElementById(loadingId);
   const result = document.getElementById(resultId);
   const resultText = document.getElementById(resultTextId);
   loading.classList.add('show');
   result.classList.add('hidden');
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch('/.netlify/functions/claude', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
-      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, system: VICTORIA_SYSTEM, messages: [{ role: 'user', content: userPrompt }] })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt: userPrompt, system: VICTORIA_SYSTEM })
     });
     const data = await res.json();
     loading.classList.remove('show');
@@ -493,23 +490,23 @@ async function callClaude(userPrompt, loadingId, resultId, resultTextId, loading
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   } catch(e) {
     loading.classList.remove('show');
-    resultText.textContent = 'Connection error. Please check your API key and try again.';
+    resultText.textContent = 'Connection error. Please try again.';
     result.classList.remove('hidden');
   }
 }
 
 async function runNavigator() {
   const success = document.getElementById('nav-success').value;
-  const prompt = 'A newly certified PMP needs guidance. Goal: ' + (navAnswers.goal || 'not specified') + '. Experience: ' + (navAnswers.exp || 'not specified') + '. Biggest challenge: ' + (navAnswers.block || 'not specified') + '. Industry: ' + (navAnswers.industry || 'not specified') + '. 90-day vision: ' + (success || 'not specified') + '. Give them a personalised action plan with these sections: 1. THEIR SITUATION — one honest paragraph. 2. LINKEDIN STRATEGY — 3 specific actions. 3. POSITIONING STRATEGY — 3 specific steps. 4. TOOLS TO LEARN — ranked list with reasons. 5. 90-DAY SPRINT — week by week. 6. VICTORIAS VERDICT — one bold truth. Be specific. No generic advice.';
-  await callClaude(prompt, 'nav-loading', 'nav-result', 'nav-result-text', 'Building your personalised roadmap...');
+  const prompt = 'A newly certified PMP needs guidance. Goal: ' + (navAnswers.goal || 'not specified') + '. Experience: ' + (navAnswers.exp || 'not specified') + '. Biggest challenge: ' + (navAnswers.block || 'not specified') + '. Industry: ' + (navAnswers.industry || 'not specified') + '. 90-day vision: ' + (success || 'not specified') + '. Give them a personalised action plan with these sections: 1. THEIR SITUATION. 2. LINKEDIN STRATEGY — 3 specific actions. 3. POSITIONING STRATEGY — 3 specific steps. 4. TOOLS TO LEARN — ranked list. 5. 90-DAY SPRINT — week by week. 6. VICTORIAS VERDICT — one bold truth. Be specific. No generic advice.';
+  await callClaude(prompt, 'nav-loading', 'nav-result', 'nav-result-text');
 }
 
 async function runCV() {
   const cv = document.getElementById('cv-input').value;
   const target = document.getElementById('cv-target').value;
   if (!cv.trim()) { alert('Please paste your CV first.'); return; }
-  const prompt = 'A PMP needs their CV rebuilt for global remote work. Target: ' + (target || 'global remote PM roles') + '. Their CV: ' + cv + '. Please provide: 1. DIAGNOSIS — top 3 problems with this CV. 2. REBUILT CV — rewrite summary and experience sections with outcomes not duties, consultant language, global framing. 3. KEYWORDS TO ADD — 5 keywords for global clients. 4. VICTORIAS VERDICT — the one change that makes the biggest difference. Make the rebuilt sections copy-paste ready.';
-  await callClaude(prompt, 'cv-loading', 'cv-result', 'cv-result-text', 'Rebuilding your CV...');
+  const prompt = 'A PMP needs their CV rebuilt for global remote work. Target: ' + (target || 'global remote PM roles') + '. Their CV: ' + cv + '. Provide: 1. DIAGNOSIS — top 3 problems. 2. REBUILT CV — rewrite with outcomes not duties, consultant language, global framing. 3. KEYWORDS TO ADD — 5 keywords. 4. VICTORIAS VERDICT.';
+  await callClaude(prompt, 'cv-loading', 'cv-result', 'cv-result-text');
 }
 
 async function runLinkedIn() {
@@ -517,8 +514,8 @@ async function runLinkedIn() {
   const about = document.getElementById('li-about').value;
   const target = document.getElementById('li-target').value;
   if (!headline.trim()) { alert('Please enter your current LinkedIn headline.'); return; }
-  const prompt = 'A PMP needs their LinkedIn transformed. Target: ' + (target || 'remote opportunities') + '. Current headline: ' + headline + '. Current about: ' + (about || 'not provided') + '. Please provide: 1. HEADLINE DIAGNOSIS — what is wrong and why it costs them. 2. NEW HEADLINE 3 OPTIONS — consultant positioning formula, no job titles. 3. ABOUT SECTION REWRITE — hook, credibility, what I deliver, who I help, call to action. 4. KEYWORDS TO ADD — for global remote PM discoverability. 5. PROFILE ACTIONS — 3 quick wins today. 6. VICTORIAS VERDICT — the truth about why most PMP profiles fail. Make rewrites copy-paste ready.';
-  await callClaude(prompt, 'li-loading', 'li-result', 'li-result-text', 'Transforming your LinkedIn...');
+  const prompt = 'A PMP needs their LinkedIn transformed. Target: ' + (target || 'remote opportunities') + '. Current headline: ' + headline + '. Current about: ' + (about || 'not provided') + '. Provide: 1. HEADLINE DIAGNOSIS. 2. NEW HEADLINE 3 OPTIONS — consultant positioning, no job titles. 3. ABOUT SECTION REWRITE — hook, credibility, delivery, CTA. 4. KEYWORDS TO ADD. 5. PROFILE ACTIONS — 3 quick wins. 6. VICTORIAS VERDICT.';
+  await callClaude(prompt, 'li-loading', 'li-result', 'li-result-text');
 }
 
 async function runUpwork() {
@@ -526,26 +523,23 @@ async function runUpwork() {
   const background = document.getElementById('uw-background').value;
   const target = document.getElementById('uw-target').value;
   if (!background.trim()) { alert('Please describe your background first.'); return; }
-  const prompt = 'A PMP needs their Upwork profile rebuilt. Background: ' + background + '. Target clients: ' + (target || 'international PM clients') + '. Current profile: ' + (current || 'starting fresh') + '. Please provide: 1. WHAT IS WRONG — specific employee language to remove. 2. REBUILT OVERVIEW — open with client pain, establish credibility, show proof, state delivery, clear CTA. First person consultant tone. 3. PROFILE TITLE — 3 options. 4. PROPOSAL TEMPLATE — reusable for their niche. 5. PORTFOLIO STRATEGY — build proof without prior remote clients. 6. VICTORIAS VERDICT — the mindset shift that changes everything. Make everything copy-paste ready.';
-  await callClaude(prompt, 'uw-loading', 'uw-result', 'uw-result-text', 'Rebuilding your Upwork profile...');
+  const prompt = 'A PMP needs their Upwork profile rebuilt. Background: ' + background + '. Target clients: ' + (target || 'international PM clients') + '. Current profile: ' + (current || 'starting fresh') + '. Provide: 1. WHAT IS WRONG. 2. REBUILT OVERVIEW — consultant tone, client pain first, credibility, proof, CTA. 3. PROFILE TITLE — 3 options. 4. PROPOSAL TEMPLATE. 5. PORTFOLIO STRATEGY. 6. VICTORIAS VERDICT.';
+  await callClaude(prompt, 'uw-loading', 'uw-result', 'uw-result-text');
 }
-
-let interviewHistory = [];
 
 async function startInterview() {
   const role = document.getElementById('int-role').value;
   const scenario = document.getElementById('int-scenario').value;
   if (!scenario) { alert('Please select an interview scenario.'); return; }
-  interviewHistory = [];
   const chatDiv = document.getElementById('interview-chat');
   const messages = document.getElementById('chat-messages');
   chatDiv.style.display = 'block';
   document.getElementById('int-result').classList.add('hidden');
   const openings = {
-    'Client discovery call': 'Hi, I am looking for a project manager to help us with ' + (role || 'a major initiative') + '. We have had issues in the past with PMs who needed constant hand-holding. Tell me — how do you ensure a project stays on track without me having to chase for updates?',
-    'PM job interview': 'Thanks for coming in. I see you have your PMP. A lot of candidates have certifications but struggle in real environments. Can you walk me through a time a project was going off the rails and what you personally did to recover it?',
-    'Handling the rate objection': 'I like your profile but your rate is higher than others I have seen. The last PM we hired charged half what you are asking. Help me understand why you are worth the difference.',
-    'Convincing a sceptical client': 'Look, I have used project managers before and it always ends the same way — I still end up doing the work myself. What makes you different?'
+    'Client discovery call': 'Hi, I am looking for a project manager for ' + (role || 'a major initiative') + '. We have had issues with PMs who needed constant hand-holding. How do you ensure a project stays on track without me chasing for updates?',
+    'PM job interview': 'Thanks for coming in. I see you have your PMP. Can you walk me through a time a project was going off the rails and what you personally did to recover it?',
+    'Handling the rate objection': 'I like your profile but your rate is higher than others. The last PM we hired charged half what you are asking. Help me understand why you are worth the difference.',
+    'Convincing a sceptical client': 'I have used project managers before and it always ends the same way — I still end up doing the work myself. What makes you different?'
   };
   const question = openings[scenario] || openings['Client discovery call'];
   messages.innerHTML = '<div style="background:#0D1B2A;color:white;padding:12px 14px;border-radius:10px;margin-bottom:10px;font-size:13px;"><strong style="color:#C9A84C">Client: </strong>' + question + '</div>';
@@ -558,8 +552,8 @@ async function sendAnswer() {
   messages.innerHTML += '<div style="background:#F4F1EB;padding:12px 14px;border-radius:10px;margin-bottom:10px;font-size:13px;"><strong>You: </strong>' + answer + '</div>';
   const scenario = document.getElementById('int-scenario').value || 'client interview';
   const role = document.getElementById('int-role').value || 'a remote PM role';
-  const prompt = 'The person is practising a ' + scenario + ' for ' + role + '. They just said: ' + answer + '. Give feedback: SCORE — Employee 1 to Consultant 10: score out of 10. WHAT WORKED — what was good. WHAT TO IMPROVE — what sounded like employee thinking. VICTORIAS REWRITE — how Victoria would have answered using consultant language. FOLLOW-UP QUESTION — one more challenging question as the client.';
-  await callClaude(prompt, 'int-loading', 'int-result', 'int-result-text', 'Analysing your answer...');
+  const prompt = 'The person is practising a ' + scenario + ' for ' + role + '. They said: ' + answer + '. Give feedback: SCORE — Employee 1 to Consultant 10. WHAT WORKED. WHAT TO IMPROVE — employee thinking spotted. VICTORIAS REWRITE — how Victoria would answer using consultant language. FOLLOW-UP QUESTION — one more challenging question as the client.';
+  await callClaude(prompt, 'int-loading', 'int-result', 'int-result-text');
   document.getElementById('int-answer').value = '';
 }
 
@@ -568,8 +562,8 @@ async function runTools() {
   const goal = document.getElementById('tools-goal').value;
   const hours = document.getElementById('tools-hours').value;
   if (!goal) { alert('Please select your goal first.'); return; }
-  const prompt = 'A PMP needs a personalised tools learning roadmap. Tools they know: ' + (know || 'none') + '. Goal: ' + goal + '. Available time: ' + (hours || 'not specified') + '. Please provide: 1. TOOL PRIORITY RANKING — ranked list with reasons. Victoria non-negotiables are ClickUp, Monday.com, and Jira — explain why these three matter. 2. LEARNING SEQUENCE — order and time for each. 3. HOW TO LEARN EACH — best free resources. 4. PORTFOLIO STRATEGY — build proof without client work. 5. HOW TO PRESENT TOOL SKILLS — exact language for CV, LinkedIn, Upwork. 6. WEEKLY PLAN — realistic schedule based on available hours. 7. VICTORIAS VERDICT — the mindset about tools most PMPs miss.';
-  await callClaude(prompt, 'tools-loading', 'tools-result', 'tools-result-text', 'Building your tools roadmap...');
+  const prompt = 'A PMP needs a tools learning roadmap. Tools they know: ' + (know || 'none') + '. Goal: ' + goal + '. Available time: ' + (hours || 'not specified') + '. Provide: 1. TOOL PRIORITY RANKING — ClickUp, Monday.com, Jira are non-negotiables, explain why. 2. LEARNING SEQUENCE — order and time. 3. HOW TO LEARN EACH — free resources. 4. PORTFOLIO STRATEGY — build proof without clients. 5. HOW TO PRESENT TOOL SKILLS — language for CV, LinkedIn, Upwork. 6. WEEKLY PLAN. 7. VICTORIAS VERDICT.';
+  await callClaude(prompt, 'tools-loading', 'tools-result', 'tools-result-text');
 }
 
 function copyResult(id) {
